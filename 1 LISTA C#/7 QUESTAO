@@ -1,0 +1,27 @@
+using System;
+
+class Program {
+    static void Main() {
+        Console.WriteLine("1 - Morros (R$120,00)");
+        Console.WriteLine("2 - Barreirinhas (R$200,00)");
+        Console.WriteLine("3 - Bacabeira (R$50,00)");
+        Console.WriteLine("4 - Rosário (R$80,00)");
+        Console.Write("Código do destino: ");
+        int codigo = int.Parse(Console.ReadLine());
+        Console.Write("Ida e volta (SIM/NAO)? ");
+        char volta = char.Parse(Console.ReadLine().ToUpper());
+
+        double preco = 0;
+        if (codigo == 1) preco = 120;
+        else if (codigo == 2) preco = 200;
+        else if (codigo == 3) preco = 50;
+        else if (codigo == 4) preco = 80;
+        else {
+            Console.WriteLine("Código inválido!");
+            return;
+        }
+
+        double total = (volta == 'SIM') ? preco * 2 * 0.9 : preco;
+        Console.WriteLine($"Valor total a pagar: R$ {total:F2}");
+    }
+}
