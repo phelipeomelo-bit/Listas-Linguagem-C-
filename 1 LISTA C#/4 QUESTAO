@@ -1,0 +1,26 @@
+using System;
+
+class Program {
+    static void Main() {
+        double[] notas = new double[7];
+        for (int i = 0; i < 7; i++) {
+            Console.Write($"Nota {i+1}: ");
+            notas[i] = double.Parse(Console.ReadLine());
+        }
+
+        double media1 = (notas[0] + notas[1] + notas[2]) / 3.0;
+        double media2 = (notas[3] + notas[4] + notas[5]) / 3.0;
+        double mediaFinal = (media1 + media2 + notas[6]) / 3.0;
+
+        string conceito;
+        if (mediaFinal < 60)
+            conceito = "C";
+        else if (mediaFinal < 80)
+            conceito = "B";
+        else
+            conceito = "A";
+
+        Console.WriteLine($"Nota final = {mediaFinal:F1}");
+        Console.WriteLine($"Conceito = {conceito}");
+    }
+}
